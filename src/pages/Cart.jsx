@@ -7,6 +7,7 @@ import Dropdown from "../components/Dropdown";
 import Panel from "../components/Panel";
 
 const itemQuantity = [
+  { label: 0, value: 0 },
   { label: 1, value: 1 },
   { label: 2, value: 2 },
   { label: 3, value: 3 },
@@ -22,8 +23,12 @@ function Cart() {
     console.log(option);
   };
 
+  const buttonType = selectedOption ? "primary" : "inactive";
+
+  const handleClick = () => console.log(buttonType);
+
   return (
-    <div className="bg-gray-900 h-screen w-screen p-10 flex justify-center items-center ">
+    <div className="bg-gray-900  w-screen p-10 flex justify-center items-center ">
       <CartCard>
         <CardImage />
         <div className="flex-col justify-between my-10">
@@ -40,7 +45,7 @@ function Cart() {
             value={selectedOption}
             options={itemQuantity}
           />
-          <h2 className="text-2xl">{selectedOption} x $67</h2>
+          <h2 className="text-2xl">{selectedOption || 0} x $67</h2>
         </div>
         <div className="flex justify-center align-middle mt-10">
           <h3 className="text-white text-3xl font-light">Total: </h3>
@@ -48,7 +53,7 @@ function Cart() {
             ${selectedOption * 67}{" "}
           </h3>
         </div>
-        <Button primary />
+        <Button onClick={handleClick} primary />
       </CartCard>
     </div>
   );
