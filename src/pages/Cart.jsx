@@ -12,7 +12,6 @@ const itemQuantity = [
   { label: 3, value: 3 },
   { label: 4, value: 4 },
   { label: 5, value: 5 },
-  { label: 6, value: 6 },
 ];
 
 function Cart() {
@@ -25,15 +24,29 @@ function Cart() {
 
   return (
     <div className="bg-gray-900 h-screen w-screen p-10 flex justify-center items-center ">
-      <CartCard className="flex-col justify-between">
+      <CartCard>
         <CardImage />
-        <div className="flex justify-between items-center text-white">
+        <div className="flex-col justify-between my-10">
+          <h2 className="text-white text-4xl text-center">
+            Everything is ready!
+          </h2>
+          <h3 className="text-center text-white text-lg font-light mt-2">
+            Select quantity to continue
+          </h3>
+        </div>
+        <div className=" flex justify-between items-center text-white weigth my-5">
           <Dropdown
             onChange={handleSelect}
             value={selectedOption}
             options={itemQuantity}
           />
-          {selectedOption} x $67
+          <h2 className="text-2xl">{selectedOption} x $67</h2>
+        </div>
+        <div className="flex justify-center align-middle mt-10">
+          <h3 className="text-white text-3xl font-light">Total: </h3>
+          <h3 className="text-white text-3xl ml-2 font-light">
+            ${selectedOption * 67}{" "}
+          </h3>
         </div>
         <Button primary />
       </CartCard>

@@ -4,7 +4,7 @@ import Panel from "./Panel";
 import { FiChevronDown } from "react-icons/fi";
 
 function Dropdown({ options, value, onChange }) {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
