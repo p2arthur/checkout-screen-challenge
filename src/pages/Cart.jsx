@@ -45,6 +45,11 @@ function Cart() {
             value={selectedOption}
             options={itemQuantity}
           />
+          <Dropdown
+            onChange={handleSelect}
+            value={selectedOption}
+            options={itemQuantity}
+          />
           <h2 className="text-2xl">{selectedOption || 0} x $67</h2>
         </div>
         <div className="flex justify-center align-middle mt-10">

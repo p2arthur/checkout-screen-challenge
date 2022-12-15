@@ -6,6 +6,7 @@ import { FiChevronDown } from "react-icons/fi";
 function Dropdown({ options, value, onChange }) {
   const [isOpen, setIsOpen] = useState(false);
 
+  //(Checking click location)
   //1 - Define a reference to the main div of the Dropdown component
   const refDiv = useRef();
 
