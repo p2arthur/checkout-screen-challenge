@@ -1,6 +1,8 @@
 import classNames from "classnames";
 
 function Button({ primary, inactive, ...rest }) {
+  const handleClick = () => navigate("/resumepage");
+
   const buttonClass = classNames(
     "w-10/12 border-2 transition hover:ease-in duration-150 ease-out mt-5 p-2 rounded-full",
     {
@@ -11,7 +13,7 @@ function Button({ primary, inactive, ...rest }) {
 
   return (
     <div className="flex justify-center w-full">
-      <button {...rest} className={buttonClass}>
+      <button onClick={handleClick} {...rest} className={buttonClass}>
         Buy now
       </button>
     </div>

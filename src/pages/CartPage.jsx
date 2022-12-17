@@ -4,7 +4,7 @@ import CartCard from "../components/CartCard";
 import CardImage from "../components/Image";
 import Button from "../components/Button";
 import Dropdown from "../components/Dropdown";
-import Panel from "../components/Panel";
+import UseNavigationContext from "../hooks/use-navigation-context";
 
 const itemQuantity = [
   { label: 0, value: 0 },
@@ -18,14 +18,16 @@ const itemQuantity = [
 function Cart() {
   const [selectedOption, setSelectedOption] = useState(null);
 
+  const { navigate } = UseNavigationContext();
+
+  const handleClick = () => navigate("/resumepage");
+
   const handleSelect = (option) => {
     setSelectedOption(option);
     console.log(option);
   };
 
   const buttonType = selectedOption ? "primary" : "inactive";
-
-  const handleClick = () => console.log(buttonType);
 
   return (
     <div className="bg-gray-900  w-screen p-10 flex justify-center items-center ">
