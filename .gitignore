@@ -23,4 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 *.cjs
-*.config.cjs
+vite.config.cjs
+tailwind.config.cjs
+postcss.config.cjs
