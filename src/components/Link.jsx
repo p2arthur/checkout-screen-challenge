@@ -1,6 +1,6 @@
 import UseNavigationContext from "../hooks/use-navigation-context";
 
-function Link({ to, children }) {
+function Link({ to, children, className }) {
   const { navigate } = UseNavigationContext();
 
   const handleClick = (event) => {
@@ -9,7 +9,11 @@ function Link({ to, children }) {
   };
 
   return (
-    <a onClick={handleClick} className="cursor-pointer" href={to}>
+    <a
+      onClick={handleClick}
+      className={`${className} cursor-pointer`}
+      href={to}
+    >
       {children}
     </a>
   );
