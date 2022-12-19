@@ -17,6 +17,9 @@ function App() {
       <Router pathName="/cart">
         <CartPage />
       </Router>
+      <Router pathName="/">
+        <TablePage />
+      </Router>
       <Router pathName="/table">
         <TablePage />
       </Router>

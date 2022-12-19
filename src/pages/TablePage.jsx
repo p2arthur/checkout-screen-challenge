@@ -1,7 +1,7 @@
 import Table from "../components/Table";
-
+import SortableTable from "../components/SortableTable";
 function TablePage() {
-  const sneakers = [
+  const data = [
     { name: "Dunk low", color: "bg-red-500", price: 890 },
     { name: "Jordan low", color: "bg-blue-500", price: 1150 },
     { name: "Jordan high", color: "bg-orange-500", price: 350 },
@@ -9,7 +9,11 @@ function TablePage() {
   ];
 
   const config = [
-    { label: "Model", render: (sneaker) => sneaker.name },
+    {
+      label: "Model",
+      render: (sneaker) => sneaker.name,
+      sortValue: (sneaker) => sneaker.name,
+    },
     {
       label: "Color",
       render: (sneaker) => (
@@ -18,10 +22,14 @@ function TablePage() {
         ></div>
       ),
     },
-    { label: "Price", render: (sneaker) => `$${sneaker.price}` },
+    {
+      label: "Price",
+      render: (sneaker) => `$${sneaker.price}`,
+      sortValue: (sneaker) => sneaker.price,
+    },
     {
       label: "Image",
-      render: (sneaker) => (
+      render: () => (
         <div className=" flex justify-center">
           <img
             className="h-20 w-20 transform hover:scale-150 hover:shadow-lg rounded-lg transition-all"
@@ -33,9 +41,11 @@ function TablePage() {
     },
   ];
 
+  const keyFnHelper = (sneaker) => sneaker.name;
+
   return (
-    <div className="bg-slate-900 h-screen p-10 rounded flex justify-center mt-10">
-      <Table config={config} sneakers={sneakers} />
+    <div className="bg-slate-900 flex justify-center mt-16">
+      <SortableTable keyFnHelper={keyFnHelper} config={config} data={data} />
     </div>
   );
 }
