@@ -61,7 +61,7 @@ function Cart() {
   );
 
   return (
-    <div className="bg-gray-900  w-full p-10 flex justify-center items-center ">
+    <div className="bg-gray-900  w-full p-10 flex justify-center items-center mt-10">
       {showModal ? modalElement : null}
       <CartCard>
         <CardImage />

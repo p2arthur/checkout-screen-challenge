@@ -7,13 +7,13 @@ function NavigationBar() {
   ];
 
   const renderedLinks = Links.map((link) => (
-    <Link className="font-bold text-xl" to={link.path}>
+    <Link className="font-thin text-xl" to={link.path}>
       {link.label}
     </Link>
   ));
 
   return (
-    <div className="flex justify-around text-white bg-red-400 h-100">
+    <div className="flex justify-around items-center text-white bg-slate-900 h-12 fixed w-full shadow-2xl border-b-4 border-b-sky-600">
       {renderedLinks}
     </div>
   );
