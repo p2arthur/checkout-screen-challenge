@@ -47,11 +47,7 @@ function Cart() {
 
   const actionBar = (
     <div>
-      <Button
-        className="w-full"
-        onClick={() => navigate("/resumepage")}
-        success
-      >
+      <Button className="w-full" onClick={handleClick} success>
         Confirm and go to payment
       </Button>
     </div>
