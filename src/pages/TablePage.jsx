@@ -1,11 +1,11 @@
-import Table from "../components/Table";
+//import Table from "../components/Table";
 import SortableTable from "../components/SortableTable";
 function TablePage() {
   const data = [
-    { name: "Dunk low", color: "bg-red-500", price: 890 },
-    { name: "Jordan low", color: "bg-blue-500", price: 1150 },
-    { name: "Jordan high", color: "bg-orange-500", price: 350 },
     { name: "Nike Air Max", color: "bg-slate-500", price: 400 },
+    { name: "Jordan low", color: "bg-blue-500", price: 1150 },
+    { name: "Dunk low", color: "bg-red-500", price: 890 },
+    { name: "Jordan high", color: "bg-orange-500", price: 350 },
   ];
 
   const config = [
