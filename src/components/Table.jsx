@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-function Table({ config, data, keyFnHelper }) {
+function Table({ config, data, keyFnHelper, className }) {
   const renderedHeaders = config.map((column) => {
     if (column.header) {
       return <Fragment key={column.label}>{column.header()}</Fragment>;
@@ -19,7 +19,7 @@ function Table({ config, data, keyFnHelper }) {
     const renderedCells = config.map((column, index) => (
       <td
         key={index}
-        className="border-b-2 border-sky-700/50 text-white p-3 text-center font-semibold h-44"
+        className="border-b-2 border-sky-700/50 text-white p-3 text-center text-xl font-thin h-44"
       >
         {column.render(rowData)}
       </td>
@@ -33,7 +33,7 @@ function Table({ config, data, keyFnHelper }) {
   });
 
   return (
-    <table className=" table-auto w-full  ">
+    <table className={`${className} table-auto w-full  `}>
       <thead className="">
         <tr>{renderedHeaders}</tr>
       </thead>

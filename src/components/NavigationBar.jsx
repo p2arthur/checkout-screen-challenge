@@ -17,7 +17,7 @@ function NavigationBar() {
   ));
 
   return (
-    <div className="flex justify-around items-center text-white bg-slate-900 h-16 fixed w-full shadow-2xl border-b-4 border-b-sky-600">
+    <div className="flex justify-around items-center text-white bg-slate-900 z-50 h-16 fixed w-full shadow-2xl border-b-4 border-b-sky-600">
       {renderedLinks}
     </div>
   );

@@ -23,11 +23,6 @@ function TablePage() {
       ),
     },
     {
-      label: "Price",
-      render: (sneaker) => `$${sneaker.price}`,
-      sortValue: (sneaker) => sneaker.price,
-    },
-    {
       label: "Image",
       render: () => (
         <div className=" flex justify-center">
@@ -39,12 +34,27 @@ function TablePage() {
         </div>
       ),
     },
+    {
+      label: "Price",
+      render: (sneaker) => `$${sneaker.price}`,
+      sortValue: (sneaker) => sneaker.price,
+    },
   ];
 
   const keyFnHelper = (sneaker) => sneaker.name;
 
   return (
-    <div className="bg-slate-900 flex justify-center mt-16">
+    <div className="bg-slate-900 flex justify-center mt-16 flex flex-col items-center">
+      <div className="h-56 flex items-center bg-black w-full justify-center overflow-hidden bg-cover my-5">
+        <img
+          className="opacity-50 w-full "
+          src="https://images.unsplash.com/photo-1597773150796-e5c14ebecbf5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YWJzdHJhY3QlMjBibHVlJTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&w=1000&q=80"
+          alt=""
+        />
+        <h1 className=" absolute text-5xl text-white text-center tracking-wider">
+          Select your <br /> product
+        </h1>
+      </div>
       <SortableTable keyFnHelper={keyFnHelper} config={config} data={data} />
     </div>
   );
