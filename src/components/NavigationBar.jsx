@@ -3,7 +3,8 @@ import Link from "./Link";
 function NavigationBar() {
   const Links = [
     { label: "Cart", path: "/cart" },
-    { label: "Table", path: "/" },
+    { label: "Table", path: "/table" },
+    { label: "Counter", path: "/counter" },
   ];
 
   const renderedLinks = Links.map((link) => (

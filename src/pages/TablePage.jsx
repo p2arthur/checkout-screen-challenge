@@ -44,7 +44,7 @@ function TablePage() {
   const keyFnHelper = (sneaker) => sneaker.name;
 
   return (
-    <div className="bg-slate-900 flex justify-center mt-16 flex flex-col items-center">
+    <div className="bg-slate-900 flex justify-center mt-11 flex flex-col items-center">
       <div className="h-56 flex items-center bg-black w-full justify-center overflow-hidden bg-cover my-5">
         <img
           className="opacity-50 w-full "
